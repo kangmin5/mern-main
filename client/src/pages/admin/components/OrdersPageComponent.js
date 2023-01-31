@@ -1,7 +1,7 @@
 import { Row, Col, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import AdminLinksComponent from "../../../components/admin/AdminLinksComponent";
-import axios from "axios";
+import axios from "axios"
 import { useEffect, useState } from "react";
 
 const OrdersPageComponent = () => {
