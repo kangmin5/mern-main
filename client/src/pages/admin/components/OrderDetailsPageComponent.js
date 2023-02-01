@@ -5,11 +5,11 @@ import {
   Form,
   Alert,
   ListGroup,
-  Button,
+  Button, 
 } from "react-bootstrap";
 import CartItemComponent from "../../../components/CartItemComponent";
 
-const OrderDetailsPageComponent = () => {
+const OrderDetailsPageComponent = ({getOrder}) => {
   return (
     <Container fluid>
       <Row className="mt-4">
