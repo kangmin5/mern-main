@@ -1,10 +1,10 @@
 import OrderDetailsPageComponent from './components/OrderDetailsPageComponent'
 import axios from 'axios';
 
-const getOrder = async (id) => {
-    const { data } = await axios.get("/api/orders/user/" + id)
-    return data
-}
+// const getOrder = async (id) => {
+//     const { data } = await axios.get("/api/orders/user/" + id)
+//     return data
+// }
 
 const markAsDelivered = async (id) => {
     const { data } = await axios.put("/api/orders/delivered/" + id)
@@ -14,7 +14,7 @@ const markAsDelivered = async (id) => {
 }
 
 const AdminOrderDetailsPage = () => {
-    return <OrderDetailsPageComponent getOrder={getOrder} markAsDelivered={markAsDelivered}/>
+    return <OrderDetailsPageComponent  markAsDelivered={markAsDelivered}/>
 };
 
 export default AdminOrderDetailsPage;

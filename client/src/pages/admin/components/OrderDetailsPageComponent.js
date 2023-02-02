@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {
+import { 
     Container,
     Row,
     Col,
@@ -9,6 +9,7 @@ import {
     Button,
 } from "react-bootstrap";
 import { useParams } from "react-router-dom"
+import axios from "axios";
 import CartItemComponent from "../../../components/CartItemComponent";
 
 const OrderDetailsPageComponent = ({ getOrder,markAsDelivered }) => {
@@ -24,6 +25,10 @@ const OrderDetailsPageComponent = ({ getOrder,markAsDelivered }) => {
     const [cartItems, setCartItems] = useState([])
 
     useEffect(() => {
+        const getOrder = async (id) => {
+            const { data } = await axios.get("/api/orders/user/" + id)
+            return data
+        }
         getOrder(id)
             .then((order) => {
                 setUserInfo(order.user)
